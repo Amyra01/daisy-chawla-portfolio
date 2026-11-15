@@ -1,0 +1,92 @@
+[
+  {
+    "id": "justiceflow-ai",
+    "title": "JusticeFlow AI",
+    "subtitle": "Trauma-Informed Legal & Voice/Text AI Platform",
+    "description": "Built a trauma-informed AI platform where survivors share stories via text/voice; a Structure Engine converts fragmented recall into legal timelines and auto-generates FIRs and affidavits. Implemented real-time distress detection with breathing-exercise and safe-stop flows; tested across 60+ mock case simulations.",
+    "features": [
+      "Structure Engine converts fragmented voice/text recall into chronological legal timelines",
+      "Auto-generates structured FIRs and legal affidavits using RAG & NLP",
+      "Real-time distress detection with breathing-exercise & safe-stop flows (tested across 60+ mock simulations)"
+    ],
+    "techStack": ["Next.js", "RAG", "NLP", "Supabase", "Voice/Text AI", "Tailwind CSS"],
+    "liveUrl": "https://justiceflow-three.vercel.app/",
+    "githubUrl": "https://github.com/Amyra01",
+    "bannerColor": "#a855f7",
+    "event": "Thapar Hackathon 2026 — Finalist",
+    "fpsMetric": "60+ Mock Case Simulations",
+    "screens": ["Voice/Text Story Intake", "Structure Engine Legal Timeline", "Auto-FIR & Distress Safe-Stop"]
+  },
+  {
+    "id": "ai-agents-india",
+    "title": "AI Agents for India (GSSoC)",
+    "subtitle": "Production Agentic AI Workflows",
+    "description": "Developing and deploying AI agents for 'Agents for India' on live production infrastructure as part of GirlScript Summer of Code (GSSoC) Agentic AI Track.",
+    "features": [
+      "Autonomous AI agents deployed on live production infrastructure",
+      "Built with LangGraph, Function Calling, RAG, and Prompt Engineering",
+      "Part of the large-scale open-source 'Agents for India' initiative"
+    ],
+    "techStack": ["Python", "LangGraph", "LLMs", "RAG", "Function Calling", "Qdrant"],
+    "liveUrl": "https://github.com/Amyra01",
+    "githubUrl": "https://github.com/Amyra01",
+    "bannerColor": "#06b6d4",
+    "event": "GSSoC 2026 — Agentic AI Track",
+    "fpsMetric": "Live Production Infrastructure",
+    "screens": ["Agentic Workflow Graph", "RAG & Vector DB Layer", "Function Calling Pipeline"]
+  },
+  {
+    "id": "ml-pipeline",
+    "title": "Applied AI/ML Pipelines",
+    "subtitle": "End-to-End Preprocessing & ML Workflows",
+    "description": "Developed ML model workflows and data preprocessing pipelines at Meander Software Solutions and IIT Roorkee, applying supervised and unsupervised ML techniques to real-world datasets.",
+    "features": [
+      "End-to-end preprocessing-to-evaluation ML pipelines on real-world datasets",
+      "Supervised & unsupervised model workflows built in Python",
+      "AI-driven application features integrated with FastAPI backends"
+    ],
+    "techStack": ["Python", "Machine Learning", "NLP", "FastAPI", "PostgreSQL"],
+    "liveUrl": "https://drive.google.com/file/d/1B1QwoneS0XyTrruKhE5Ju5bB6UV19gXy/view?usp=drive_link",
+    "githubUrl": "https://github.com/Amyra01",
+    "bannerColor": "#f59e0b",
+    "event": "IIT Roorkee & Meander Software",
+    "fpsMetric": "Supervised & Unsupervised ML",
+    "screens": ["Data Preprocessing Pipeline", "Model Training & Evaluation", "Python AI Integration"]
+  },
+  {
+    "id": "java-backend",
+    "title": "Java RESTful Backend Modules",
+    "subtitle": "OOP Architecture & Relational Database Layer",
+    "description": "Engineered backend logic in Java using OOP principles and delivered RESTful service modules integrated with a relational database layer during the Java Developer Internship at Digimantra.",
+    "features": [
+      "Clean Object-Oriented Programming (OOP) backend architecture in Java",
+      "RESTful API service modules integrated with MySQL/PostgreSQL",
+      "Verified with Digimantra Internship Certificate"
+    ],
+    "techStack": ["Java", "REST APIs", "OOP", "MySQL", "JWT"],
+    "liveUrl": "https://drive.google.com/file/d/1Px3ZkT89N-g64yikQXAkOfkhvrq_pcH9/view?usp=drive_link",
+    "githubUrl": "https://github.com/Amyra01",
+    "bannerColor": "#00ff88",
+    "event": "Digimantra — Java Internship",
+    "fpsMetric": "RESTful Service Modules",
+    "screens": ["Java OOP Service Layer", "REST API Controllers", "Relational DB Integration"]
+  },
+  {
+    "id": "web-apps-acmegrade",
+    "title": "Responsive Full-Stack Web Apps",
+    "subtitle": "HTML5, CSS3, JavaScript & PHP/MySQL Suite",
+    "description": "Built 3+ responsive web applications using HTML, CSS, JavaScript, and PHP with MySQL backend integration during the Web Development Internship at Acmegrade.",
+    "features": [
+      "3+ responsive web applications built from scratch",
+      "Dynamic PHP backend logic with MySQL database integration",
+      "Verified with Acmegrade Internship Certificate"
+    ],
+    "techStack": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
+    "liveUrl": "https://drive.google.com/file/d/1IgKlCsKK12DKKwMa3iLCsYsABoCVhpoB/view?usp=drive_link",
+    "githubUrl": "https://github.com/Amyra01",
+    "bannerColor": "#ef4444",
+    "event": "Acmegrade — Web Dev Internship",
+    "fpsMetric": "3+ Production Web Apps",
+    "screens": ["Responsive Frontend UI", "PHP Server Logic", "MySQL Database Layer"]
+  }
+]
