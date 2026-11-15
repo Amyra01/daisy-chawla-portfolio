@@ -26,6 +26,7 @@ export class MotherboardCircuit
         this.setNvmeAndCapacitorsAtLab()
         this.setOverclockCoreAtTimeMachineSpot()
         this.setPcbBusTraces()
+        this.setJeepDirectionArrow()
 
         this.game.ticker.events.on('tick', () =>
         {
@@ -652,6 +653,208 @@ export class MotherboardCircuit
         }
     }
 
+    setJeepDirectionArrow()
+    {
+        // Dedicated 3D GPS Direction Arrow that always follows the Jeep and points the way
+        this.tourStops = [
+            { name: 'projects', label: 'PROJECTS • JUSTICEFLOW' },
+            { name: 'career', label: 'CAREER & B.TECH (8.39)' },
+            { name: 'lab', label: 'CERTS & LORS LAB' },
+            { name: 'social', label: 'SOCIAL & GITHUB' },
+            { name: 'circuit', label: 'RACING CIRCUIT' },
+            { name: 'bowling', label: 'BOWLING ALLEY' },
+            { name: 'cookie', label: 'COOKIE OVEN' },
+            { name: 'achievements', label: 'ACHIEVEMENTS' },
+            { name: 'timeMachine', label: 'OVERCLOCK AI CORE' },
+            { name: 'landing', label: 'DAISY HOME HUB' }
+        ]
+        this.currentStopIndex = 0
+
+        this.jeepArrowRoot = new THREE.Group()
+        this.jeepArrowRoot.name = 'daisyJeepDirectionArrow'
+        this.game.scene.add(this.jeepArrowRoot)
+
+        // 1. Ground Compass Ring around the Jeep
+        const compassRing = new THREE.Mesh(
+            new THREE.RingGeometry(2.35, 2.52, 40),
+            this.materials.cyanGlow
+        )
+        compassRing.rotation.x = -Math.PI * 0.5
+        compassRing.position.y = 0.18
+        this.jeepArrowRoot.add(compassRing)
+
+        // 2. Rotating Pointer Pivot (rotates toward target)
+        this.jeepArrowPivot = new THREE.Group()
+        this.jeepArrowRoot.add(this.jeepArrowPivot)
+
+        // Build crisp extruded 3D Arrow shape pointing toward +Z
+        const arrowShape = new THREE.Shape()
+        arrowShape.moveTo(0, 1.35)       // Tip
+        arrowShape.lineTo(0.68, 0.25)    // Right wing outer
+        arrowShape.lineTo(0.28, 0.25)    // Right wing inner
+        arrowShape.lineTo(0.28, -0.85)   // Right tail
+        arrowShape.lineTo(-0.28, -0.85)  // Left tail
+        arrowShape.lineTo(-0.28, 0.25)   // Left wing inner
+        arrowShape.lineTo(-0.68, 0.25)   // Left wing outer
+        arrowShape.closePath()
+
+        const extrudeSettings = {
+            depth: 0.16,
+            bevelEnabled: true,
+            bevelSegments: 2,
+            steps: 1,
+            bevelSize: 0.04,
+            bevelThickness: 0.04
+        }
+        const arrowGeo = new THREE.ExtrudeGeometry(arrowShape, extrudeSettings)
+        arrowGeo.rotateX(Math.PI * 0.5)
+        arrowGeo.center()
+
+        // Overhead Floating 3D GPS Arrow above the Jeep
+        this.overheadArrowMesh = new THREE.Mesh(arrowGeo, this.materials.copperGold)
+        this.overheadArrowMesh.position.set(0, 2.85, 0)
+        this.overheadArrowMesh.scale.set(0.82, 0.82, 0.82)
+        this.jeepArrowPivot.add(this.overheadArrowMesh)
+
+        // Forward Ground Guide Chevron right in front of the Jeep on the compass ring
+        this.groundArrowMesh = new THREE.Mesh(arrowGeo, this.materials.cyanGlow)
+        this.groundArrowMesh.position.set(0, 0.28, 3.15)
+        this.groundArrowMesh.scale.set(0.72, 0.55, 0.72)
+        this.jeepArrowPivot.add(this.groundArrowMesh)
+
+        // Second smaller trailing chevron for animated flow
+        this.groundChevron2 = new THREE.Mesh(
+            new THREE.ConeGeometry(0.35, 0.65, 4),
+            this.materials.orangeGlow
+        )
+        this.groundChevron2.rotation.x = Math.PI * 0.5
+        this.groundChevron2.position.set(0, 0.26, 4.25)
+        this.jeepArrowPivot.add(this.groundChevron2)
+
+        // 3. Floating 3D Destination & Distance Banner above the Arrow
+        this.arrowBannerCanvas = document.createElement('canvas')
+        this.arrowBannerCanvas.width = 512
+        this.arrowBannerCanvas.height = 112
+        this.arrowBannerCtx = this.arrowBannerCanvas.getContext('2d')
+
+        this.arrowBannerTex = new THREE.CanvasTexture(this.arrowBannerCanvas)
+        this.arrowBannerTex.colorSpace = THREE.SRGBColorSpace
+
+        const bannerMat = new THREE.MeshBasicNodeMaterial({
+            map: this.arrowBannerTex,
+            transparent: true,
+            depthTest: false
+        })
+
+        this.arrowBannerMesh = new THREE.Mesh(
+            new THREE.PlaneGeometry(3.2, 0.7),
+            bannerMat
+        )
+        this.arrowBannerMesh.position.set(0, 3.65, 0)
+        this.arrowBannerMesh.renderOrder = 9
+        this.jeepArrowRoot.add(this.arrowBannerMesh)
+
+        this.lastBannerText = ''
+        this.updateArrowBannerText('PROJECTS • JUSTICEFLOW', 25)
+    }
+
+    updateArrowBannerText(label, distMeters)
+    {
+        const textKey = `${label}_${distMeters}`
+        if(this.lastBannerText === textKey)
+            return
+        this.lastBannerText = textKey
+
+        const ctx = this.arrowBannerCtx
+        const w = this.arrowBannerCanvas.width
+        const h = this.arrowBannerCanvas.height
+
+        ctx.clearRect(0, 0, w, h)
+
+        // Pill background
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.9)'
+        ctx.strokeStyle = '#00f2fe'
+        ctx.lineWidth = 5
+        ctx.beginPath()
+        ctx.roundRect(8, 8, w - 16, h - 16, 42)
+        ctx.fill()
+        ctx.stroke()
+
+        // Top subtitle
+        ctx.fillStyle = '#ffb646'
+        ctx.font = '900 22px "Nunito", Arial, sans-serif'
+        ctx.textAlign = 'center'
+        ctx.fillText(`🧭 FOLLOW ARROW  •  ${distMeters}m`, w * 0.5, 40)
+
+        // Destination title
+        ctx.fillStyle = '#ffffff'
+        ctx.font = '900 30px "Nunito", Arial, sans-serif'
+        ctx.fillText(`➔ ${label}`, w * 0.5, 80)
+
+        this.arrowBannerTex.needsUpdate = true
+    }
+
+    setNextTourStopAfter(respawnName)
+    {
+        const idx = this.tourStops.findIndex(s => s.name === respawnName)
+        if(idx !== -1)
+        {
+            this.currentStopIndex = (idx + 1) % this.tourStops.length
+        }
+    }
+
+    updateJeepDirectionArrow(elapsed, delta)
+    {
+        if(!this.jeepArrowRoot || !this.game.player || !this.game.respawns)
+            return
+
+        const playerPos = this.game.player.position
+        this.jeepArrowRoot.position.set(playerPos.x, Math.max(0, playerPos.y), playerPos.z)
+
+        const currentStop = this.tourStops[this.currentStopIndex]
+        if(!currentStop)
+            return
+
+        const targetRespawn = this.game.respawns.getByName(currentStop.name)
+        if(!targetRespawn)
+            return
+
+        const dx = targetRespawn.position.x - playerPos.x
+        const dz = targetRespawn.position.z - playerPos.z
+        const dist = Math.hypot(dx, dz)
+
+        // When the Jeep arrives at the target zone, advance to the next stop in the tour!
+        if(dist < 9.0)
+        {
+            this.currentStopIndex = (this.currentStopIndex + 1) % this.tourStops.length
+            return
+        }
+
+        // Smoothly rotate arrow pivot to point toward target (atan2(dx, dz))
+        const targetAngle = Math.atan2(dx, dz)
+        let angleDiff = targetAngle - this.jeepArrowPivot.rotation.y
+        while(angleDiff > Math.PI) angleDiff -= Math.PI * 2
+        while(angleDiff < -Math.PI) angleDiff += Math.PI * 2
+        this.jeepArrowPivot.rotation.y += angleDiff * Math.min(1, delta * 10)
+
+        // Pulse the arrows forward along the target direction
+        const pulse = Math.sin(elapsed * 5.0) * 0.22
+        this.overheadArrowMesh.position.z = pulse
+        this.overheadArrowMesh.position.y = 2.85 + Math.sin(elapsed * 3.5) * 0.1
+        this.groundArrowMesh.position.z = 3.15 + pulse
+        this.groundChevron2.position.z = 4.25 + Math.sin(elapsed * 5.0 - 0.8) * 0.25
+
+        // Make the overhead text banner face the camera so it's always readable
+        if(this.game.view?.camera)
+        {
+            this.arrowBannerMesh.quaternion.copy(this.game.view.camera.quaternion)
+        }
+
+        // Update distance every 2 meters
+        const roundedDist = Math.max(5, Math.round(dist / 2) * 2)
+        this.updateArrowBannerText(currentStop.label, roundedDist)
+    }
+
     createTraceSegment(p1, p2, material)
     {
         const dx = p2.x - p1.x
@@ -767,11 +970,14 @@ export class MotherboardCircuit
 
     update()
     {
-        if(!this.group.visible)
-            return
-
         const elapsed = this.game.ticker.elapsed
         const delta = this.game.ticker.delta
+
+        // Always update the Jeep 3D Direction Arrow regardless of theme
+        this.updateJeepDirectionArrow(elapsed, delta)
+
+        if(!this.group.visible)
+            return
 
         // Spin GPU cooling fans
         for(const fan of this.fans)

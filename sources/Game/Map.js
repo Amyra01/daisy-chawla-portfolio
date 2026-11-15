@@ -71,6 +71,7 @@ export class Map
 
                 if(this.game.player && respawnName)
                 {
+                    this.game.world?.motherboardCircuit?.setNextTourStopAfter(respawnName)
                     this.game.player.respawn(respawnName, () =>
                     {
                         this.game.view.focusPoint.isTracking = true
