@@ -1,16 +1,61 @@
-# React + Vite
+# ⚡ Daisy Chawla — Interactive 3D Motherboard & AI Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![Live Deployment](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel)](https://daisy-chawla-portfolio.vercel.app/)
+[![Three.js WebGPU](https://img.shields.io/badge/Three.js-WebGPU%20%2B%20TSL-049EF4?style=for-the-badge&logo=threedotjs)](https://threejs.org/)
+[![Rapier3D Physics](https://img.shields.io/badge/Physics-Rapier3D-FF6B35?style=for-the-badge)](https://rapier.rs/)
 
-Currently, two official plugins are available:
+An interactive, gamified 3D developer portfolio built with **Three.js (WebGPU)**, **TSL (Three.js Shading Language)**, and **Rapier3D Physics**. Visitors drive a physics-simulated 3D Jeep across a hybrid **Cyber-Motherboard & Interactive Island** to explore projects, internships, certifications, and achievements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Demo
+👉 **[https://daisy-chawla-portfolio.vercel.app/](https://daisy-chawla-portfolio.vercel.app/)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## ✨ Key Engineering Highlights
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- **Hybrid 3D Motherboard Architecture (`MotherboardCircuit.js`)**:
+  - Custom **AI CPU Socket & Silicon Die** at the Landing Hub, **4 Vertical DDR5 RAM DIMM Towers** along the Career Timeline, **Dual-Fan GPU Tensor Heatsink** at Projects, **Solid-State VRM Capacitors**, and an **Overclock AI BIOS Core**.
+  - Animated **3-Lane PCB Data Bus Traces** with real-time traveling data packets connecting major portfolio zones.
+  - Live **Theme Switcher**: Toggle instantaneously between **⚡ Hybrid PCB**, **💻 Cyber Board**, and **🌿 Nature** modes via custom TSL shader uniforms (`Floor.js`, `Terrain.js`).
+- **Autonomous 3D GPS Waypoint Navigation**:
+  - Overhead 3D gold directional arrow, ground compass ring, and camera-facing distance banner (`🧭 FOLLOW ARROW • Xm`) that dynamically guides the Jeep from stop to stop.
+- **Multi-Mode Camera & Interactive HUD (`View.js`, `Map.js`)**:
+  - Switch between **🚗 Drive**, **🦅 3D Above** (full-island bird's-eye overview), and **🔄 360° View** panoramic orbit.
+  - Left-side **World Tour Guide** for 1-click teleportation and right-side **Animated Photo & Bio Showcase** (`Ken Burns` transitions).
+- **Real-Time Physics & Spatial Audio**:
+  - Powered by **Rapier3D** (`@dimforge/rapier3d`) for vehicle suspension, jumping, boost, bowling pins, and knockable 3D `DAISY CHAWLA` letters, paired with **Howler.js** spatial sound effects.
+
+---
+
+## 🛠️ Tech Stack
+
+- **3D & Shaders:** Three.js (`three/webgpu`), TSL (Three.js Shading Language), GSAP
+- **Physics:** Rapier3D (`@dimforge/rapier3d`)
+- **Audio & UI:** Howler.js, HTML5/CSS3, Stylus
+- **Build & Deployment:** Vite, Vercel
+
+---
+
+## 🚀 Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+---
+
+## 📬 Connect With Me
+
+- **Portfolio:** [daisy-chawla-portfolio.vercel.app](https://daisy-chawla-portfolio.vercel.app/)
+- **LinkedIn:** [linkedin.com/in/daisy-chawla](https://www.linkedin.com/in/daisy-chawla/)
+- **GitHub:** [github.com/Amyra01](https://github.com/Amyra01)
+- **Email:** daisychawla2005@gmail.com
