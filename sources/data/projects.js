@@ -1,38 +1,65 @@
 export default [
     {
+        title: 'SK Chawla AI Advisory',
+        titleSmall: [ 'SK Chawla', 'Tax & Legal AI' ],
+        url: 'https://sk-chawla.vercel.app/',
+        attributes:
+        {
+            role: [ 'Full-Stack & AI', 'Architect' ],
+            at: 'Next.js 14 • Supabase',
+            with: [ 'Guardrailed LLM', '45-Table Postgres' ]
+        },
+        distinctions: [ 'awwwards', 'fwa', 'cssda' ],
+        slides: [
+            {
+                badge: 'LIVE DEPLOYMENT • VERCEL (2026)',
+                heading: 'SK Chawla — AI-Assisted Tax & Legal Advisory Platform',
+                subtitle: '18-page, 12-API full-stack platform with 45-table Supabase (PostgreSQL + RLS) & 9-slot IST booking engine',
+                metrics: [ '18 Pages & 12 APIs', '45-Table Postgres RLS', '26-Service Catalog' ],
+                stack: [ 'Next.js 14', 'TypeScript', 'Supabase RLS', 'Tailwind CSS', 'Vercel' ],
+                accent: '#38bdf8'
+            },
+            {
+                badge: 'GUARDRAILED AI & NOTICE DECODER',
+                heading: 'AI Notice Decoder & 6-Factor GST Health Check',
+                subtitle: 'Parses PDF/image/text uploads up to 8 MB, 12 req/min guardrailed AI Assistant & EN/HI localization',
+                metrics: [ '8 MB PDF/Image OCR', '12 req/min Guardrails', 'EN / HI + 10-Step Guide' ],
+                stack: [ 'Guardrailed LLM', 'Resend Emails', 'GST Scoring Engine', 'GitHub @Amyra01' ],
+                accent: '#f59e0b'
+            }
+        ],
+        images:
+        [
+            'prior-1.ktx',
+            'prior-2.ktx',
+        ]
+    },
+    {
         title: 'JusticeFlow AI',
         titleSmall: [ 'JusticeFlow', 'AI LegalTech' ],
         url: 'https://justiceflow-three.vercel.app/',
         attributes:
         {
             role: [ 'AI & Full-Stack', 'Lead Developer' ],
-            at: 'LegalTech AI Platform',
-            with: [ 'React & Node.js', 'LLM & REST APIs' ]
+            at: 'Thapar Hackathon',
+            with: [ 'RAG & NLP', 'Voice/Text AI' ]
         },
         distinctions: [ 'awwwards', 'fwa', 'cssda' ],
         slides: [
             {
                 badge: 'FEATURED LIVE DEPLOYMENT • VERCEL',
-                heading: 'JusticeFlow AI — LegalTech & Case Workflow Engine',
-                subtitle: 'AI-driven legal workflow automation, intelligent document drafting & case tracking',
-                metrics: [ '99.2% Routing Accuracy', '3.4x Faster Case Triage', 'Live on Vercel' ],
-                stack: [ 'React.js', 'Node.js', 'Generative AI', 'Tailwind CSS', 'Vercel' ],
+                heading: 'JusticeFlow AI — Trauma-Informed Legal AI Platform',
+                subtitle: 'Converts voice & text into court-ready timelines, FIRs, and affidavits in under 3 seconds',
+                metrics: [ '100+ Users • 1,200+ Docs', '95.2% Routing Accuracy', '<3s FIR & Affidavit Gen' ],
+                stack: [ 'Next.js', 'RAG', 'NLP', 'Supabase', 'Voice/Text AI' ],
                 accent: '#ff7b54'
             },
             {
-                badge: 'INTELLIGENT CASE ANALYSIS',
-                heading: 'Automated Legal Research & Document Synthesis',
-                subtitle: 'NLP-powered petition summarization, precedent lookup & citizen legal guidance',
-                metrics: [ 'Real-time AI Briefs', 'Multi-Role Dashboard', 'Zero-Latency UI' ],
-                stack: [ 'Prompt Engineering', 'REST APIs', 'JavaScript ES6+', 'Responsive UI' ],
-                accent: '#38bdf8'
-            },
-            {
-                badge: 'PRODUCTION ARCHITECTURE',
-                heading: 'End-to-End Full-Stack Legal Access Portal',
-                subtitle: 'Built by Daisy Chawla • Press ENTER or click URL above to launch live app',
-                metrics: [ 'justiceflow-three.vercel.app', 'GitHub @Amyra01', 'Open Access' ],
-                stack: [ 'Full-Stack Web', 'AI Integration', 'Cloud Deployment' ],
+                badge: 'SAFETY & DISTRESS DETECTION',
+                heading: 'Real-Time Distress Detection & Calm Follow-Up',
+                subtitle: 'Validated across 60+ edge cases with zero escalations • Press ENTER to open live app',
+                metrics: [ '60+ Edge Cases Tested', 'Zero Escalations', 'justiceflow-three.vercel.app' ],
+                stack: [ 'Prompt Engineering', 'Breathing/Safe-Stop UX', 'Vercel' ],
                 accent: '#a855f7'
             }
         ],
@@ -40,70 +67,34 @@ export default [
         [
             'threejs-journey-1.ktx',
             'threejs-journey-2.ktx',
-            'threejs-journey-3.ktx',
         ]
     },
     {
-        title: 'Code Slayer 2K25',
-        titleSmall: [ 'Code Slayer', 'NIT Delhi' ],
-        url: 'https://drive.google.com/drive/folders/11kBSbRBT2B6_YiPRJ_jvEUbZI7SEfJBO?usp=drive_link',
+        title: 'Belle Ligne 3D',
+        titleSmall: [ 'Belle Ligne', '3D Fashion' ],
+        url: 'https://belle-ligne.vercel.app/',
         attributes:
         {
-            role: [ 'Full-Stack Dev', 'AI Builder' ],
-            at: 'NIT Delhi Hackathon',
-            with: [ 'Rapid Prototyping', 'System Design' ]
+            role: [ 'Full-Stack & 3D', 'Creator Platform' ],
+            at: 'Three.js • WebGL',
+            with: [ '60 FPS Catwalk', 'Virtual Try-On Lab' ]
         },
-        distinctions: [ 'awwwards', 'fwa' ],
+        distinctions: [ 'awwwards', 'fwa', 'cssda' ],
         slides: [
             {
-                badge: 'NATIONAL HACKATHON • NIT DELHI',
-                heading: 'Code Slayer 2K25 — High-Velocity Hackathon Build',
-                subtitle: 'Engineered scalable full-stack problem-solving architecture under 24-hour sprint constraints',
-                metrics: [ 'NIT Delhi 2K25', 'Full-Stack Prototype', 'Verified Certificate' ],
-                stack: [ 'React', 'Node.js', 'Java', 'Python', 'API Integration' ],
-                accent: '#f59e0b'
-            },
-            {
-                badge: 'COMPETITIVE ENGINEERING',
-                heading: 'Real-Time Analytics & Interactive Dashboard',
-                subtitle: 'Designed responsive frontend & modular backend pipelines for live judge evaluation',
-                metrics: [ 'Sub-100ms Response', 'Live Demo Pitch', 'Google Drive Proof' ],
-                stack: [ 'UI/UX Design', 'Data Structures', 'Algorithms', 'Git' ],
-                accent: '#10b981'
-            }
-        ],
-        images:
-        [
-            'bonhomme-10-ans-1.ktx',
-            'bonhomme-10-ans-2.ktx',
-        ]
-    },
-    {
-        title: 'Code for Bharat S2',
-        titleSmall: [ 'Code for', 'Bharat S2' ],
-        url: 'https://drive.google.com/drive/folders/11kBSbRBT2B6_YiPRJ_jvEUbZI7SEfJBO?usp=drive_link',
-        attributes:
-        {
-            role: [ 'AI & Web Dev', 'Civic Tech' ],
-            at: 'Code for Bharat S2',
-            with: [ 'Inclusive AI', 'Digital India' ]
-        },
-        distinctions: [ 'fwa', 'cssda' ],
-        slides: [
-            {
-                badge: 'NATIONAL CIVIC-TECH HACKATHON',
-                heading: 'Code for Bharat Season 2 — Civic Impact Platform',
-                subtitle: 'Built accessible digital public infrastructure solutions empowering citizens across India',
-                metrics: [ 'Season 2 Honoree', 'Civic AI Workflows', 'Multi-Language Ready' ],
-                stack: [ 'React.js', 'AI/ML', 'Node.js', 'Tailwind CSS', 'REST API' ],
+                badge: 'LIVE DEPLOYMENT • VERCEL PWA (2025)',
+                heading: 'Belle Ligne — 3D Digital Fashion Magazine & Creator Platform',
+                subtitle: 'Full-stack creator platform (100+ active users) with 60 FPS Three.js catwalk, 4-angle camera & spatial audio',
+                metrics: [ '100+ Active Users', '60 FPS Three.js Catwalk', '4-Angle Camera + Audio' ],
+                stack: [ 'React 18', 'Three.js WebGL', 'Supabase RLS', 'Node.js/Express', 'PWA' ],
                 accent: '#ec4899'
             },
             {
-                badge: 'SCALABLE PUBLIC TECH',
-                heading: 'Bridging Digital Divide with Intelligent Automation',
-                subtitle: 'Click the URL board above to view official hackathon certificates & credentials',
-                metrics: [ 'Verified Credential', 'High Accessibility', 'Cloud Native' ],
-                stack: [ 'Full-Stack', 'Cloud APIs', 'Responsive Web' ],
+                badge: 'CANVAS STUDIO & AI STYLE DNA',
+                heading: 'HTML5 Canvas Studio & Virtual Try-On Lab',
+                subtitle: 'AI Style DNA engine generating 500+ 3D asset variants with sub-200ms cloud persistence',
+                metrics: [ '500+ 3D Asset Variants', 'Sub-200ms Persistence', 'belle-ligne.vercel.app' ],
+                stack: [ 'HTML5 Canvas', 'AI Style DNA', 'Tailwind CSS', 'Vercel' ],
                 accent: '#6366f1'
             }
         ],
@@ -114,32 +105,32 @@ export default [
         ]
     },
     {
-        title: 'Thapar Hackathon',
-        titleSmall: [ 'Thapar', 'Finalist' ],
-        url: 'https://drive.google.com/drive/folders/11kBSbRBT2B6_YiPRJ_jvEUbZI7SEfJBO?usp=drive_link',
+        title: '3D Motherboard World',
+        titleSmall: [ '3D Motherboard', 'AI Portfolio' ],
+        url: 'https://github.com/Amyra01/daisy-chawla-portfolio',
         attributes:
         {
-            role: [ 'National Finalist', 'Team Lead' ],
-            at: 'Thapar Institute',
-            with: [ 'AI & Full-Stack', 'Pitch Finalist' ]
+            role: [ 'WebGPU & Physics', 'Creator' ],
+            at: 'Three.js • Rapier3D',
+            with: [ 'TSL Shaders', 'Autonomous GPS' ]
         },
         distinctions: [ 'awwwards', 'cssda', 'fwa' ],
         slides: [
             {
-                badge: 'NATIONAL FINALIST • THAPAR INSTITUTE',
-                heading: 'Thapar Hackathon Finalist — Top Tier Engineering',
-                subtitle: 'Selected among top national teams for end-to-end technical execution & product innovation',
-                metrics: [ 'Grand Finale Team', 'Live Jury Defense', 'Verified Folder' ],
-                stack: [ 'AI/ML', 'Full-Stack Web', 'System Architecture', 'Java/Python' ],
-                accent: '#14b8a6'
+                badge: 'LIVE ON VERCEL • GITHUB OPEN SOURCE (2026)',
+                heading: 'Interactive 3D Motherboard & AI Developer Portfolio',
+                subtitle: 'Gamified 3D world with 4 custom procedural TSL compute shaders & deterministic 60 FPS Rapier3D physics',
+                metrics: [ '4 Procedural TSL Shaders', '60 FPS Rapier3D Physics', 'Under 50 MB VRAM' ],
+                stack: [ 'Three.js WebGPU', 'TSL Shaders', 'Rapier3D', 'GSAP', 'Vite' ],
+                accent: '#00f2fe'
             },
             {
-                badge: 'INNOVATION & EXECUTION',
-                heading: 'From Concept to Live Production Prototype',
-                subtitle: 'Delivered complete working product with automated workflows and clean UI/UX',
-                metrics: [ 'Top Finalist Rank', 'PCTE CSE Representative', 'CGPA 8.39' ],
-                stack: [ 'React', 'Node.js', 'Machine Learning', 'GitHub @Amyra01' ],
-                accent: '#f97316'
+                badge: 'HARDWARE LANDMARKS & GPS',
+                heading: '3D CPU/GPU/RAM Architecture & GPS Waypoint Arrow',
+                subtitle: '8 autonomous waypoint nodes, 3D GPS Jeep arrow, aerial 3D view & animated photo showcase',
+                metrics: [ '8 Autonomous Waypoints', 'Hybrid/Cyber/Nature', 'daisy-chawla-portfolio.vercel.app' ],
+                stack: [ 'JavaScript ES6+', 'Spatial Audio', 'Vercel' ],
+                accent: '#14b8a6'
             }
         ],
         images:
@@ -149,127 +140,57 @@ export default [
         ]
     },
     {
-        title: 'Zomatothon',
-        titleSmall: [ 'Zomatothon', 'FoodTech AI' ],
-        url: 'https://drive.google.com/drive/folders/11kBSbRBT2B6_YiPRJ_jvEUbZI7SEfJBO?usp=drive_link',
+        title: 'SecureVoice AI',
+        titleSmall: [ 'SecureVoice', 'Voice AI' ],
+        url: 'https://secure-voice-ai.vercel.app/',
         attributes:
         {
-            role: [ 'AI & Backend', 'Problem Solver' ],
-            at: 'Zomatothon',
-            with: [ 'Predictive ML', 'Logistics Optimization' ]
+            role: [ 'AI & Full-Stack', 'Developer' ],
+            at: 'Vercel Live App',
+            with: [ 'Voice Intelligence', 'Security Workflows' ]
         },
-        distinctions: [ 'awwwards' ],
+        distinctions: [ 'awwwards', 'fwa' ],
         slides: [
             {
-                badge: 'HACKATHON SPRINT • ZOMATOTHON',
-                heading: 'Zomatothon — Smart Commerce & Delivery Intelligence',
-                subtitle: 'Data-driven optimization and intelligent user experience for high-volume food & hyperlocal tech',
-                metrics: [ 'Smart Routing ML', 'Real-Time UX', 'Hackathon Credential' ],
-                stack: [ 'Python', 'Machine Learning', 'React', 'Data Analytics' ],
-                accent: '#ef4444'
-            },
+                badge: 'LIVE DEPLOYMENT • VERCEL',
+                heading: 'SecureVoice AI — Intelligent Voice Processing Platform',
+                subtitle: 'Deployed full-stack voice AI application • Press ENTER to launch live deployment',
+                metrics: [ 'secure-voice-ai.vercel.app', 'GitHub @Amyra01', 'Live Production' ],
+                stack: [ 'Voice AI', 'React / Next.js', 'REST APIs', 'Vercel' ],
+                accent: '#10b981'
+            }
+        ],
+        images:
+        [
+            'bonhomme-10-ans-1.ktx',
+            'bonhomme-10-ans-2.ktx',
+        ]
+    },
+    {
+        title: 'AppForge Platform',
+        titleSmall: [ 'AppForge', 'Full-Stack' ],
+        url: 'https://app-forge-oq7k.vercel.app/',
+        attributes:
+        {
+            role: [ 'Full-Stack Dev', 'Builder' ],
+            at: 'Vercel Live App',
+            with: [ 'Rapid App Builder', 'Cloud Deploy' ]
+        },
+        distinctions: [ 'fwa' ],
+        slides: [
             {
-                badge: 'ALGORITHMIC EFFICIENCY',
-                heading: 'High-Throughput Order & Recommendation Pipeline',
-                subtitle: 'Engineered by Daisy Chawla • Press ENTER to open verified hackathon credentials folder',
-                metrics: [ 'Fast Inference', 'Clean Architecture', 'Verified Proof' ],
-                stack: [ 'AI/ML', 'Full-Stack', 'API Design' ],
-                accent: '#eab308'
+                badge: 'LIVE DEPLOYMENT • VERCEL',
+                heading: 'AppForge — Full-Stack Web Application Builder',
+                subtitle: 'Production web app deployed on Vercel • Press ENTER to open live deployment',
+                metrics: [ 'app-forge-oq7k.vercel.app', 'GitHub @Amyra01', 'Open Source' ],
+                stack: [ 'TypeScript', 'React', 'Node.js', 'Vercel' ],
+                accent: '#ef4444'
             }
         ],
         images:
         [
             'scout-1.ktx',
             'scout-2.ktx',
-        ]
-    },
-    {
-        title: 'IIT Roorkee AI/ML',
-        titleSmall: [ 'IIT Roorkee', 'AI / ML' ],
-        url: 'https://drive.google.com/file/d/1B1QwoneS0XyTrruKhE5Ju5bB6UV19gXy/view?usp=drive_link',
-        attributes:
-        {
-            role: [ 'AI / ML Trainee', 'Research & Dev' ],
-            at: 'IIT Roorkee',
-            with: [ 'Python & ML', 'Neural Networks' ]
-        },
-        distinctions: [ 'awwwards', 'fwa', 'cssda' ],
-        slides: [
-            {
-                badge: 'CERTIFIED TRAINING • IIT ROORKEE',
-                heading: 'Artificial Intelligence & Machine Learning Trainee',
-                subtitle: 'Supervised & unsupervised learning, feature engineering, model evaluation & deployment',
-                metrics: [ 'IIT Roorkee Certified', 'End-to-End ML Pipelines', 'Verified Certificate' ],
-                stack: [ 'Python', 'Scikit-Learn', 'Deep Learning', 'Data Science', 'Pandas' ],
-                accent: '#3b82f6'
-            },
-            {
-                badge: 'APPLIED AI SYSTEMS',
-                heading: 'Predictive Modeling & Intelligent Automation',
-                subtitle: 'Click the URL board or press ENTER to view official IIT Roorkee Certificate on Google Drive',
-                metrics: [ 'High Model Accuracy', 'Real-World Datasets', 'Official Credential' ],
-                stack: [ 'Machine Learning', 'AI Algorithms', 'Model Optimization' ],
-                accent: '#8b5cf6'
-            }
-        ],
-        images:
-        [
-            'prior-1.ktx',
-            'prior-2.ktx',
-        ]
-    },
-    {
-        title: 'Digimantra Java Dev',
-        titleSmall: [ 'Digimantra', 'Java Intern' ],
-        url: 'https://drive.google.com/file/d/1Px3ZkT89N-g64yikQXAkOfkhvrq_pcH9/view?usp=drive_link',
-        attributes:
-        {
-            role: [ 'Java Developer', 'Intern' ],
-            at: 'Digimantra Labs',
-            with: [ 'Core Java & OOP', 'Backend Systems' ]
-        },
-        distinctions: [ 'fwa', 'cssda' ],
-        slides: [
-            {
-                badge: 'INDUSTRY INTERNSHIP • DIGIMANTRA LABS',
-                heading: 'Java Developer Intern — Enterprise Backend Engineering',
-                subtitle: 'Object-oriented architecture, robust API services, database integration & debugging',
-                metrics: [ 'Digimantra Labs', 'Production Java Code', 'Internship Certificate' ],
-                stack: [ 'Java', 'OOP', 'SQL / Databases', 'Backend APIs', 'Git' ],
-                accent: '#06b6d4'
-            }
-        ],
-        images:
-        [
-            'orano-1.ktx',
-            'orano-2.ktx',
-        ]
-    },
-    {
-        title: 'Acmegrade Web Dev',
-        titleSmall: [ 'Acmegrade', 'Web Intern' ],
-        url: 'https://drive.google.com/file/d/1IgKlCsKK12DKKwMa3iLCsYsABoCVhpoB/view?usp=drive_link',
-        attributes:
-        {
-            role: [ 'Web Developer', 'Intern' ],
-            at: 'Acmegrade',
-            with: [ 'Frontend & UI', 'Full-Stack Web' ]
-        },
-        distinctions: [ 'awwwards', 'fwa' ],
-        slides: [
-            {
-                badge: 'WEB DEVELOPMENT INTERNSHIP • ACMEGRADE',
-                heading: 'Full-Stack Web Development Intern @ Acmegrade',
-                subtitle: 'Responsive web interfaces, modern JavaScript architecture & dynamic user experiences',
-                metrics: [ 'Acmegrade Certified', 'Responsive Web Apps', 'Official Certificate' ],
-                stack: [ 'HTML5 / CSS3', 'JavaScript', 'React', 'Backend Integration' ],
-                accent: '#22c55e'
-            }
-        ],
-        images:
-        [
-            'citrix-redbull-1.ktx',
-            'citrix-redbull-2.ktx',
         ]
     }
 ]
